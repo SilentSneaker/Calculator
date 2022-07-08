@@ -30,8 +30,7 @@ public:
 	wxTextCtrl* mtxt = nullptr;
 	wxButton** btn;
 	int* mField = nullptr;
-	int mWidth = 3;
-	int mHeight = 7;
+
 
 	void OnButtonClicked(wxCommandEvent& evt);
 	wxDECLARE_EVENT_TABLE();
