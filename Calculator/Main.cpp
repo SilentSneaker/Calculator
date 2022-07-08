@@ -2,7 +2,7 @@
 #include "wx/wx.h"
 
 wxBEGIN_EVENT_TABLE(Main, wxFrame)
-
+EVT_BUTTON()
 
 wxEND_EVENT_TABLE()
 
