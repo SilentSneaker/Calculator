@@ -64,6 +64,11 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 
 	switch (evt.GetId())
 	{
+	case 0:
+	{
+		mtxt->AppendText("0");
+		break;
+	}
 	case 1:
 	{
 		mtxt->AppendText("1");
@@ -162,11 +167,6 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 	case 20:
 	{
 		mtxt->AppendText("+/-");
-		break;
-	}
-	case 21:
-	{
-		mtxt->AppendText("1");
 		break;
 	}
 
