@@ -161,7 +161,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 	}
 	case 19:
 	{
-		mtxt->AppendText("C");
+		mtxt->Clear();
 		break;
 	}
 	case 20:
