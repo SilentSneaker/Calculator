@@ -206,9 +206,9 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 			b << std::hex << a;
 		}
 		else if (bin == true)
-		{*/
+		{
 
-		}
+		}*/
 
 		btn.mtxt->AppendText("dec");
 		bin = false;
