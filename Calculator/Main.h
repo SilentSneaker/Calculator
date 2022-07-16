@@ -9,7 +9,9 @@ public:
 	~Main();
 	ButtonFactory btn;
 	int* mField = nullptr;
-
+	int First;
+	int Second;
+	std::string sym;
 
 	void OnButtonClicked(wxCommandEvent& evt);
 	wxDECLARE_EVENT_TABLE();

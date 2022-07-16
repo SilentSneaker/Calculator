@@ -18,6 +18,7 @@ ButtonFactory::~ButtonFactory()
 
 void ButtonFactory::CreateButton(wxFrame* x)
 {
+	mbtn0 = new wxButton(x, 0, "0", wxPoint(100, 300), wxSize(100, 50));
 	mbtn1 = new wxButton(x, 1, "1", wxPoint(0, 150), wxSize(100, 50));
 	mbtn2 = new wxButton(x, 2, "2", wxPoint(100, 150), wxSize(100, 50));
 	mbtn3 = new wxButton(x, 3, "3", wxPoint(200, 150), wxSize(100, 50));
@@ -27,7 +28,6 @@ void ButtonFactory::CreateButton(wxFrame* x)
 	mbtn7 = new wxButton(x, 7, "7", wxPoint(0, 250), wxSize(100, 50));
 	mbtn8 = new wxButton(x, 8, "8", wxPoint(100, 250), wxSize(100, 50));
 	mbtn9 = new wxButton(x, 9, "9", wxPoint(200, 250), wxSize(100, 50));
-	mbtn0 = new wxButton(x, 0, "0", wxPoint(100, 300), wxSize(100, 50));
 	mbtn10 = new wxButton(x, 10, "+", wxPoint(0, 350), wxSize(100, 50));
 	mbtn11 = new wxButton(x, 11, "-", wxPoint(100, 350), wxSize(100, 50));
 	mbtn12 = new wxButton(x, 12, "*", wxPoint(200, 350), wxSize(100, 50));
