@@ -7,10 +7,6 @@ class Calculator : public wxApp
 public:
 	Calculator();
 	~Calculator();
-	int mWidth = 3;
-	int mHeight = 7;
-	wxButton** btn;
-
 	virtual bool OnInit();
 
 private:

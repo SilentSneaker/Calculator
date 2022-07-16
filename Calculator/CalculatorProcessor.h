@@ -9,6 +9,6 @@ class CalculatorProcessor
 
 public:
 	static CalculatorProcessor* getInstance();
-	int Solve(int a,int b, std::string _opp);
+	float Solve(float a,float b, std::string _opp);
 };
 

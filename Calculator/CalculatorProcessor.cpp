@@ -17,7 +17,7 @@ CalculatorProcessor* CalculatorProcessor::getInstance()
 		obj = new CalculatorProcessor();
 	return obj;
 }
-int CalculatorProcessor::Solve(int a, int b, std::string _opp)
+float CalculatorProcessor::Solve(float a, float b, std::string _opp)
 {
 	
 	if (_opp == "+")
@@ -27,7 +27,7 @@ int CalculatorProcessor::Solve(int a, int b, std::string _opp)
 	else if (_opp == "*")
 		return a * b;
 	else if (_opp == "mod")
-		a% b;
+		return (int)a% (int)b;
 	else
 		return a / b;
 	

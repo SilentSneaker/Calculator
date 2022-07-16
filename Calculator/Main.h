@@ -8,10 +8,12 @@ public:
 	Main();
 	~Main();
 	ButtonFactory btn;
-	int* mField = nullptr;
-	int First;
-	int Second;
+	float First;
+	float Second;
 	std::string sym;
+	bool hex = false;
+	bool bin = false;
+	bool dec = true;
 
 	void OnButtonClicked(wxCommandEvent& evt);
 	wxDECLARE_EVENT_TABLE();

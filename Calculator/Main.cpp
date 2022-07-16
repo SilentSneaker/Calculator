@@ -44,8 +44,7 @@ Main::~Main()
 }
 void Main::OnButtonClicked(wxCommandEvent& evt)
 {
-	bool hex = false;
-	bool bin = false;
+
 
 	switch (evt.GetId())
 	{
@@ -183,6 +182,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		btn.mtxt->SetValue(std::bitset<32>(b).to_string());
 		bin = true;
 		hex = false;
+		dec = false;
 		break;
 	}
 	case 17:
@@ -194,26 +194,26 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		btn.mtxt->SetValue(a.str());
 		hex = true;
 		bin = false;
+		dec = false;
 		break;
 	}
 	case 18:
 	{
-		/*if (hex == true)
+		if(hex == true)
 		{
-
-			std::string a = btn.mtxt->GetValue().ToStdString();
-			std::stringstream b;
-			b << std::hex << a;
+			btn.mtxt->SetValue("Dec");
 		}
 		else if (bin == true)
 		{
-
-		}*/
-
-		btn.mtxt->AppendText("dec");
-		bin = false;
-		hex = true;
-		break;
+			std::string a = btn.mtxt->GetValue().ToStdString();
+			btn.mtxt->SetValue(std::to_string(std::stoi(a,nullptr,2)));
+			
+			//btn.mtxt->AppendText("dec");
+		}
+			bin = false;
+			hex = false;
+			bin = true;
+			break;
 	}
 	case 19:
 	{
