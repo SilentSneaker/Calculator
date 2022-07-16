@@ -177,6 +177,8 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 	}
 	case 16:
 	{
+		if (bin)
+			break;
 		int b;
 		b = std::stoi(btn.mtxt->GetValue().ToStdString());
 		btn.mtxt->SetValue(std::bitset<32>(b).to_string());
@@ -187,6 +189,8 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 	}
 	case 17:
 	{
+		if (hex)
+			break;
 		std::ostringstream a;
 		int b;
 		b = std::stoi(btn.mtxt->GetValue().ToStdString());
@@ -199,6 +203,8 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 	}
 	case 18:
 	{
+		if (dec)
+			break;
 		if(hex == true)
 		{
 			btn.mtxt->SetValue("Dec");
@@ -208,11 +214,10 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 			std::string a = btn.mtxt->GetValue().ToStdString();
 			btn.mtxt->SetValue(std::to_string(std::stoi(a,nullptr,2)));
 			
-			//btn.mtxt->AppendText("dec");
 		}
 			bin = false;
 			hex = false;
-			bin = true;
+			dec = true;
 			break;
 	}
 	case 19:
@@ -221,6 +226,8 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		First = NULL;
 		Second = NULL;
 		sym = "";
+		bin, hex = false;
+		dec = true;
 		break;
 	}
 	case 20:
