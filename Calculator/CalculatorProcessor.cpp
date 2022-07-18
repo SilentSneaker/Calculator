@@ -30,5 +30,4 @@ float CalculatorProcessor::Solve(float a, float b, std::string _opp)
 		return (int)a% (int)b;
 	else
 		return a / b;
-	
 }

@@ -107,7 +107,13 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		if (First == NULL)
 			First = std::stoi(b);
 		else
+		{
 			Second = std::stoi(b);
+			btn.mtxt->SetValue(std::to_string(CalculatorProcessor::getInstance()->Solve(First, Second, sym)));
+			First = std::stoi((btn.mtxt->GetValue().ToStdString()));
+			btn.mtxt->Clear();
+			Second = NULL;
+		}
 		sym = "+";
 		btn.mtxt->Clear();
 		break;
@@ -119,7 +125,13 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		if (First == NULL)
 			First = std::stoi(b);
 		else
+		{
 			Second = std::stoi(b);
+			btn.mtxt->SetValue(std::to_string(CalculatorProcessor::getInstance()->Solve(First, Second, sym)));
+			First = std::stoi((btn.mtxt->GetValue().ToStdString()));
+			btn.mtxt->Clear();
+			Second = NULL;
+		}
 		btn.mtxt->Clear();
 		sym = "-";
 		break;
@@ -131,7 +143,13 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		if (First == NULL)
 			First = std::stoi(b);
 		else
+		{
 			Second = std::stoi(b);
+			btn.mtxt->SetValue(std::to_string(CalculatorProcessor::getInstance()->Solve(First, Second, sym)));
+			First = std::stoi((btn.mtxt->GetValue().ToStdString()));
+			btn.mtxt->Clear();
+			Second = NULL;
+		}
 		btn.mtxt->Clear();
 		sym = "*";
 		break;
@@ -141,10 +159,18 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		std::string b;
 		b = btn.mtxt->GetValue();
 		if (First == NULL)
+		{
 			First = std::stoi(b);
+			btn.mtxt->Clear();
+		}
 		else
+		{
 			Second = std::stoi(b);
-		btn.mtxt->Clear();
+			btn.mtxt->SetValue(std::to_string(CalculatorProcessor::getInstance()->Solve(First, Second, sym)));
+			First = std::stoi((btn.mtxt->GetValue().ToStdString()));
+			btn.mtxt->Clear();
+			Second = NULL;
+		}
 		sym = "÷";
 		break;
 	}
@@ -156,8 +182,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 			First = std::stoi(b);
 		else
 			Second = std::stoi(b);
-		btn.mtxt->Clear();
-		btn.mtxt->AppendText(std::to_string(CalculatorProcessor::getInstance()->Solve(First, Second, sym)));
+		btn.mtxt->SetValue(std::to_string(CalculatorProcessor::getInstance()->Solve(First, Second, sym)));
 		First = std::stoi((btn.mtxt->GetValue().ToStdString()));
 		Second = NULL;
 		sym = "";
@@ -181,6 +206,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 			break;
 		int b;
 		b = std::stoi(btn.mtxt->GetValue().ToStdString());
+		First = b;
 		btn.mtxt->SetValue(std::bitset<32>(b).to_string());
 		bin = true;
 		hex = false;
@@ -194,8 +220,10 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		std::ostringstream a;
 		int b;
 		b = std::stoi(btn.mtxt->GetValue().ToStdString());
+		First = b;
 		a << std::hex << b;
-		btn.mtxt->SetValue(a.str());
+		btn.mtxt->SetValue("0x");
+		btn.mtxt->AppendText(a.str());
 		hex = true;
 		bin = false;
 		dec = false;
@@ -205,20 +233,13 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 	{
 		if (dec)
 			break;
-		if(hex == true)
-		{
-			btn.mtxt->SetValue("Dec");
-		}
-		else if (bin == true)
-		{
-			std::string a = btn.mtxt->GetValue().ToStdString();
-			btn.mtxt->SetValue(std::to_string(std::stoi(a,nullptr,2)));
-			
-		}
-			bin = false;
-			hex = false;
-			dec = true;
-			break;
+		else
+			btn.mtxt->SetValue(std::to_string(First));
+
+		bin = false;
+		hex = false;
+		dec = true;
+		break;
 	}
 	case 19:
 	{
@@ -232,7 +253,10 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 	}
 	case 20:
 	{
-		btn.mtxt->AppendText("+/-");
+		float a;
+		a = std::stof(btn.mtxt->GetValue().ToStdString());
+		a *= -1;
+		btn.mtxt->SetValue(std::to_string(a));
 		break;
 	}
 	default:

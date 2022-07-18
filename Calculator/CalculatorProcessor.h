@@ -6,9 +6,10 @@ class CalculatorProcessor
 		CalculatorProcessor();
 	~CalculatorProcessor();
 	static CalculatorProcessor* obj;
-
 public:
 	static CalculatorProcessor* getInstance();
 	float Solve(float a,float b, std::string _opp);
+	CalculatorProcessor(CalculatorProcessor* other) = delete;
+	void operator=(CalculatorProcessor* other) = delete;
 };
 
