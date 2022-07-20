@@ -108,9 +108,9 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 			First = std::stoi(b);
 		else
 		{
-			Second = std::stoi(b);
+			Second = std::stof(b);
 			btn.mtxt->SetValue(std::to_string(CalculatorProcessor::getInstance()->Solve(First, Second, sym)));
-			First = std::stoi((btn.mtxt->GetValue().ToStdString()));
+			First = std::stof((btn.mtxt->GetValue().ToStdString()));
 			btn.mtxt->Clear();
 			Second = NULL;
 		}
@@ -126,9 +126,9 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 			First = std::stoi(b);
 		else
 		{
-			Second = std::stoi(b);
+			Second = std::stof(b);
 			btn.mtxt->SetValue(std::to_string(CalculatorProcessor::getInstance()->Solve(First, Second, sym)));
-			First = std::stoi((btn.mtxt->GetValue().ToStdString()));
+			First = std::stof((btn.mtxt->GetValue().ToStdString()));
 			btn.mtxt->Clear();
 			Second = NULL;
 		}
@@ -141,10 +141,10 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		std::string b;
 		b = btn.mtxt->GetLineText(12);
 		if (First == NULL)
-			First = std::stoi(b);
+			First = std::stof(b);
 		else
 		{
-			Second = std::stoi(b);
+			Second = std::stof(b);
 			btn.mtxt->SetValue(std::to_string(CalculatorProcessor::getInstance()->Solve(First, Second, sym)));
 			First = std::stoi((btn.mtxt->GetValue().ToStdString()));
 			btn.mtxt->Clear();
@@ -160,12 +160,12 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		b = btn.mtxt->GetValue();
 		if (First == NULL)
 		{
-			First = std::stoi(b);
+			First = std::stof(b);
 			btn.mtxt->Clear();
 		}
 		else
 		{
-			Second = std::stoi(b);
+			Second = std::stof(b);
 			btn.mtxt->SetValue(std::to_string(CalculatorProcessor::getInstance()->Solve(First, Second, sym)));
 			First = std::stoi((btn.mtxt->GetValue().ToStdString()));
 			btn.mtxt->Clear();
@@ -179,11 +179,11 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		std::string b;
 		b = btn.mtxt->GetValue();
 		if (First == NULL)
-			First = std::stoi(b);
+			First = std::stof(b);
 		else
-			Second = std::stoi(b);
+			Second = std::stof(b);
 		btn.mtxt->SetValue(std::to_string(CalculatorProcessor::getInstance()->Solve(First, Second, sym)));
-		First = std::stoi((btn.mtxt->GetValue().ToStdString()));
+		First = std::stof((btn.mtxt->GetValue().ToStdString()));
 		Second = NULL;
 		sym = "";
 		break;
@@ -193,9 +193,9 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		std::string b;
 		b = btn.mtxt->GetValue();
 		if (First == NULL)
-			First = std::stoi(b);
+			First = std::stof(b);
 		else
-			Second = std::stoi(b);
+			Second = std::stof(b);
 		btn.mtxt->Clear();
 		sym = "mod";
 		break;
@@ -205,7 +205,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		if (bin)
 			break;
 		int b;
-		b = std::stoi(btn.mtxt->GetValue().ToStdString());
+		b = std::stof(btn.mtxt->GetValue().ToStdString());
 		First = b;
 		btn.mtxt->SetValue(std::bitset<32>(b).to_string());
 		bin = true;
