@@ -29,6 +29,7 @@ public:
 	wxButton* mbtn19 = nullptr;
 	wxButton* mbtn20 = nullptr;
 	wxTextCtrl* mtxt = nullptr;
+public:
 	void CreateButton(wxFrame* x);
 
 };
